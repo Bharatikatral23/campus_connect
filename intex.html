@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- AUTH VIEW -->
+  <section id="auth-view" class="auth-wrap">
+    <div class="auth-card">
+      <h1>🎓 CampusConnect</h1>
+      <p class="muted">Student Resource Sharing &amp; Event Platform</p>
+
+      <div class="tabs">
+        <button class="tab active" data-auth="login">Login</button>
+        <button class="tab" data-auth="signup">Sign Up</button>
+      </div>
+
+      <form id="login-form" data-form="login">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button class="btn" type="submit">Login</button>
+        <p class="hint">Demo admin: admin@campus.com / admin123</p>
+      </form>
+
+      <form id="signup-form" data-form="signup" class="hidden">
+        <input type="text" name="name" placeholder="Full name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password (min 6 chars)" minlength="6" required />
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button class="btn" type="submit">Create Account</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- APP VIEW -->
+  <section id="app-view" class="hidden">
+    <header class="navbar">
+      <div class="brand">🎓 CampusConnect</div>
+      <nav id="nav"></nav>
+      <div class="user-box">
+        <span id="user-label"></span>
+        <button class="btn small outline" data-action="logout">Logout</button>
+      </div>
+    </header>
+    <main id="content" class="container"></main>
+  </section>
+
+  <label class="bg-picker" title="Change background live">🎨 Background
+    <input type="color" id="bg-color" value="#e0e7ff" />
+  </label>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
